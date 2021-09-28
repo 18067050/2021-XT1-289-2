@@ -1,0 +1,285 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+
+       :root {
+           background-color: #8ACED0;
+           font: 1em/1 'Open Sans', sans-serif;
+       }
+
+       /* Mobiel */
+       @media only screen and (max-width: 480px) {
+           .wrapper {
+               padding: 0 5px 0 75px;
+           }
+
+           /* TODO: tweak this */
+           .wrapper::after {
+               left: 31px;
+           }
+
+           .card__head {
+              font-size: 22px;
+           }
+
+           .card {
+               max-width: 90%;
+           }
+
+           .card__head::before {
+               left: -75px;
+               width: 64px;
+               height: 64px;
+           }
+       }
+
+       /* Tablet */
+       @media only screen and (min-width: 481px) and (max-width: 768px) {
+           .wrapper {
+               padding: 0 5px 0 75px;
+               position: absolute;
+               left: 50%;
+               transform: translate(-50%);
+               width: 50%;
+               align-items: baseline;
+           }
+
+           /* TODO: tweak this */
+           .wrapper::after {
+               left: 31px;
+           }
+
+           .card__head {
+              font-size: 22px;
+           }
+
+           .card {
+               max-width: 90%;
+           }
+
+           .card__head::before {
+               left: -81px;
+               width: 72px;
+               height: 72px;
+           }
+       }
+
+       /* Laptio */
+       @media only screen and (min-width: 769px) and (max-width: 1279px) {
+           .wrapper {
+               width: 800px;
+               position: absolute;
+               left: 50%;
+               transform: translate(-50%);
+               align-items: baseline;
+           }
+
+
+           .wrapper::after {
+               left: 398px;
+           }
+
+           .card__head {
+              font-size: 24px;
+           }
+
+           /* Tekstblokken rechts sorteren + rondje */
+           .card:nth-child(2) {
+               align-self: flex-end;
+           }
+
+           .card:nth-child(4) {
+               align-self: flex-end;
+           }
+
+           .card:nth-child(6) {
+               align-self: flex-end;
+           }
+
+           .card:nth-child(8) {
+               align-self: flex-end;
+           }
+
+           .card__head::before {
+               right: -128px;
+               width: 80px;
+               height: 80px;
+           }
+
+           /* Rondje ervoor ipv erachter */
+           .card:nth-child(2) > .card__head::before {
+               right: unset;
+               left: -128px;
+           }
+
+           .card:nth-child(4) > .card__head::before {
+               right: unset;
+               left: -128px;
+           }
+
+           .card:nth-child(6) > .card__head::before {
+               right: unset;
+               left: -128px;
+           }
+
+           .card:nth-child(8) > .card__head::before {
+               right: unset;
+               left: -128px;
+           }
+
+
+       }
+
+       @media only screen and (min-width: 1280px) {
+           .wrapper {
+               width: 800px;
+               position: absolute;
+               left: 50%;
+               transform: translate(-50%);
+               align-items: baseline;
+           }
+
+           .wrapper::after {
+               left: 398px;
+           }
+
+           /* Tekstblokken rechts sorteren + rondje */
+           .card:nth-child(2) {
+               align-self: flex-end;
+           }
+
+           .card:nth-child(4) {
+               align-self: flex-end;
+           }
+
+           .card:nth-child(6) {
+               align-self: flex-end;
+           }
+
+           .card:nth-child(8) {
+               align-self: flex-end;
+           }
+
+           .card__head {
+              font-size: 28px;
+           }
+
+           .card__head::before {
+               right: -138px;
+               width: 100px;
+               height: 100px;
+           }
+
+           /* Rondje ervoor ipv erachter */
+           .card:nth-child(2) > .card__head::before {
+               right: unset;
+               left: -138px;
+           }
+
+           .card:nth-child(4) > .card__head::before {
+               right: unset;
+               left: -138px;
+           }
+
+           .card:nth-child(6) > .card__head::before {
+               right: unset;
+               left: -138px;
+           }
+
+           .card:nth-child(8) > .card__head::before {
+               right: unset;
+               left: -138px;
+           }
+
+
+       }
+
+       .wrapper {
+           position: relative;
+           display: flex;
+           flex-direction: column;
+           gap: 25px;
+       }
+
+       /** De LIJN */
+       .wrapper::after {
+           content: "";
+           position: absolute;
+           top: 0;
+           bottom: 0;
+           border-left: 3px solid #1D3557;
+       }
+
+       .card {
+           padding: 5px;
+           position: relative;
+           box-shadow: 0px 10px 22px 4px rgb(47 62 70 / 7%);
+           background-color: #A7D9DC;
+           border-radius: 6px;
+           width: 300px;
+           /* height: 250px; */
+           border: 1px solid #1D3557;
+       }
+
+       .card__body {
+         padding: 10px;
+       }
+
+         /* Datum rechts plaatsen */
+       .card__date {
+         text-align: right;
+         padding: 10px;
+         font-style: italic;
+
+
+       }
+
+       .card__head {
+           padding: 10px;
+           font-weight: bold;
+           color: #2f3e46;
+       }
+
+       .card__head::before {
+           content: "";
+           position: absolute;
+           top: 15px;
+           background-color: #1D3557;
+           border-radius: 90px;
+           z-index: 1;
+            background-size: cover;
+              background-position: center;
+
+       }
+
+       .card:nth-child(1) > .card__head::before {
+           background-image: url('https://images.unsplash.com/photo-1562748165-d7e1ef7b960c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1174&q=80');
+       }
+
+       .card:nth-child(2) > .card__head::before {
+           background-image: url('https://www.picclickimg.com/d/l400/pict/265189710138_/Enquire-Within-Upon-Everything-Various-1967-B05.jpg');
+       }
+
+       .card:nth-child(3) > .card__head::before {
+           background-image: url('https://images.pexels.com/photos/162622/facebook-login-office-laptop-business-162622.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+       }
+
+       .card:nth-child(4) > .card__head::before {
+           background-image: url('https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1170&q=80');
+       }
+
+
+       .card:nth-child(5) > .card__head::before {
+           background-image: url('https://www.wired.com/images_blogs/thisdayintech/2010/04/mos-10.jpg');
+       }
+
+       .card:nth-child(6) > .card__head::before {
+           background-image: url('https://images.pexels.com/photos/6170640/pexels-photo-6170640.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+       }
+
+       .card:nth-child(7) > .card__head::before {
+           background-image: url('https://images.pexels.com/photos/177598/pexels-photo-177598.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260');
+       }
+
+       .card:nth-child(8) > .card__head::before {
+           background-image: url('https://experiencinginformation.files.wordpress.com/2012/07/audi2.jpg');
+       }
